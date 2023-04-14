@@ -64,6 +64,21 @@ class UserSerializer(serializers.ModelSerializer):
         ]
         extra_kwargs = {
             "password": {"write_only": True},
-            "username": {"validators": [UniqueValidator(queryset=User.objects.all(), message="A user with that username already exists.")]},
-            "email": {"validators": [UniqueValidator(queryset=User.objects.all(), message="This field must be unique.")]} 
-            }
+            "username": {
+                "validators": [
+                    UniqueValidator(
+                        queryset=User.objects.all(),
+                        message="A user with that username already exists.",
+                    )
+                ]
+            },
+            "email": {
+                "validators": [
+                    UniqueValidator(
+                        queryset=User.objects.all(),
+                        message="This field must be unique.",
+                    )
+                ]
+            },
+            "is_superuser": {"default": False},
+        }
