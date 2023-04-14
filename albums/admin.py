@@ -1,3 +1,9 @@
 from django.contrib import admin
+from .models import Album
 
-# Register your models here.
+
+class CustomAlbumAdmin(admin.ModelAdmin):
+    list_display = ["name", "year", "user", "id"]
+
+
+admin.site.register(Album, CustomAlbumAdmin)
