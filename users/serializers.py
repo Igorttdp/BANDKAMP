@@ -38,7 +38,10 @@ from rest_framework.validators import UniqueValidator
 
 class UserSerializer(serializers.ModelSerializer):
     def create(self, validated_data: dict) -> User:
-        return User.objects.create_superuser(**validated_data)
+        if (validated_data["is_superuser"]):
+            return User.objects.create_superuser(**validated_data)
+
+        return User.objects.create(**validated_data)
 
     def update(self, instance: User, validated_data: dict) -> User:
         for key, value in validated_data.items():
