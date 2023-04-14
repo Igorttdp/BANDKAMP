@@ -5,8 +5,6 @@ from .models import Song
 from .serializers import SongSerializer
 from albums.models import Album
 from django.shortcuts import get_object_or_404
-import ipdb
-
 
 class SongView(ListCreateAPIView):
     authentication_classes = [JWTAuthentication]
