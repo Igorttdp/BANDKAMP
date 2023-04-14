@@ -1,4 +1,36 @@
-# M5 - BandKamp API
+## Sumário
+
+<ul>
+    <li><a href="#bandkamp-api">BandKamp API</a></li>
+    <li><a href="##iniciando-a-aplicação">Iniciando a aplicação</a></li>
+    <li><a href="#rodando-o-projeto">Rodando o projeto</a></li>
+    <li>
+        <a href="#endpoints">Endpoints</a>
+        <br/> <i>Rotas sem autenticação</i>
+        <ul>
+            <li><a href="#post-apiusers">POST /api/users/</a></li>
+            <li><a href="#post-apilogin">POST /api/login/</a></li>
+            <li><a href="#get-apialbums">GET /api/albums/</a></li>
+            <li><a href="#get-apialbums">GET /api/albums/</a></li>
+            <li><a href="#get-apialbumsint-album_idsongs">GET /api/albums/&lt;int: album_id&gt;/songs/</a></li>
+        </ul>
+        <br/> <a href="#rotas-com-autenticação"><i>Rotas com autenticação</i></a>
+        <ul>
+            <li><a href="#get-apiusersint-user_id">GET /api/users/<span>&lt;int: user_id&gt;</a></li>
+            <li><a href="#patch-apiusersint-user_id">PATCH /api/users/&lt;int: user_id&gt;</a></li>
+            <li><a href="#delete-apiusersint-user_id">DELETE /api/users/&lt;int: user_id&gt;</a></li>
+            <li><a href="#post-apialbums">POST /api/albums/</a></li>
+            <li><a href="#post-apialbumsint-album_idsongs">POST /api/albums/&lt;int: album_id&gt;/songs/</a></li>
+        </ul>
+    </li>
+    <br/>
+    <li><a href="#utilizando-o-django-admin-site">Utilizando o Django Admin Site</a></li>
+
+</ul>
+
+<br/><br/>
+
+# BandKamp-API
 
 <br/>
 
@@ -455,7 +487,7 @@ Retorno:
 
 <br/>
 
-```json
+```bash
 DELETE api/users/1 HTTP/1.1
 Content-Type: application/json
 
@@ -566,3 +598,19 @@ Content-Type: application/json
 	"album_id": 1
 }
 ```
+
+<br/><br>
+
+## Utilizando o Django Admin Site
+
+`Django Admin Site` é uma interface no frontend projetada para facilitar o gerenciamento de inserção e remoção de dados. Você pode utiliza-lá se tiver acesso de administrador.
+
+<img src="./assets/djangoAdminSite.png" alt="Django Admin Site"/>
+
+Para acessar, basta colocar as informações do usuário administrador e clicar em "Log In". Caso ainda não tenha criado um usuário admin, clique aqui: <a href="#admin-cli">Criação de usuário admin via CLI</a>.
+
+<br/>
+
+<img src="./assets/djangoAdminSiteOverview.png" alt="Django Admin Site Overview"/>
+
+Aqui você tem acesso a todas as tabelas do banco de dados, assim como acesso a ações de criação e remoção de todos os dados!
